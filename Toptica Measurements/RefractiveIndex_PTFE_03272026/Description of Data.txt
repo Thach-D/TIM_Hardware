@@ -1,0 +1,10 @@
+03/24/2026
+
+Fiber stretcher on.
+Gain Stretcher: 19.90 um/V
+ModAmp: 3.790 V
+photomixers 180 degrees on rotational stage.
+
+Transmission test to find Refractive Index for PTFE, UHWPE. Aligned to 23.1 nA at 1000 GHz. Humidity 66%
+
+600 Ghz - 1200 Ghz with 0.5 Ghz steps

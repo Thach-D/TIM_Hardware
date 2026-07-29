@@ -1,0 +1,10 @@
+03/23/2026
+
+Fiber stretcher on.
+Gain Stretcher: 19.90 um/V
+ModAmp: 3.790 V
+photomixers 180 degrees on rotational stage.
+
+Transmission test for TIM filters: 300K, VCS1, VCS2, 4K. Aligned to 20.9 nA at 1000 GHz. Humidity 46%
+
+600 Ghz - 1200 Ghz with 0.5 Ghz steps
