@@ -84,3 +84,34 @@ def level_meter_0deg_to_volume(level_cm):
     V = np.interp(level_arr, height_cm, volume_L)
 
     return V
+
+
+def level_meter_to_vol(level_cm, tilt_deg, csv_file="Level Meter - Combined.csv"):
+    """
+    Interpolate level meter reading and tilt angle to helium volume.
+
+    Parameters
+    ----------
+    level_cm : float
+        Level meter reading in cm.
+    tilt_deg : float
+        Tilt angle in degrees.
+    csv_file : str
+        Path to the CSV file containing level meter data.
+
+    Returns
+    -------
+    volume_L : float
+        Interpolated helium volume in liters.
+    """
+
+    import numpy as np
+    import pandas as pd
+
+    data = pd.read_csv(csv_file)
+    volumes = []
+    for column in [8, 6, 4, 2, 0]:
+        height_mm, volume_L = data.iloc[:, column:column + 2].dropna().to_numpy().T
+        volumes.append(np.interp(level_cm, height_mm / 10, volume_L))
+
+    return float(np.interp(tilt_deg, [0, 15, 30, 45, 60], volumes))
